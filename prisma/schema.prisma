@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output = "../generated/prisma"
 }
 
 
@@ -26,10 +25,10 @@ model Tenant {
 
 model User {
   id        Int    @id @default(autoincrement())
-  name      String?
   email     String   @unique
-  Password  String
-  Telephone String?
+  name      String?
+  password  String
+  telephone String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   role      Role  @default(USER)
